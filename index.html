@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data from Google Sheets</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.5/css/dataTables.dataTables.css"/>
+</head>
+<body>
+    <h1>Lista Precio DisLara</h1>
+    <table id="ListDislaraPrecio" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Referencia</th>
+                <th>Unidad</th>
+				<th>Existencia</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+    </table>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.2.9.2/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/2.1.5/js/dataTables.js"></script>
+    <script>
+        new DataTable('#ListDislaraPrecio', {
+            
+			ajax:'https://script.google.com/macros/s/AKfycbz8FvKuYff5-dlG1pbsHQlicQf9MBoiOjYNyJy4XCp6vaw-YrwISv2tdzmLs5E6NzsE/exec',
+		
+            columns: [
+                { data: 'Codigo' },
+                { data: 'Nombre' },
+                { data: 'Referencia' },
+				{ data: 'Unidad' },
+                { data: 'Existencia' },
+				{ data: 'Precio' }
+            ]
+        });
+    </script>
+</body>
+</html
